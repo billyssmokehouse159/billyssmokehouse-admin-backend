@@ -15,6 +15,8 @@ const OAUTH_CLIENT_SECRET = process.env.OAuthClientSecret;
 const OAUTH_REDIRECT_URL =
   process.env.ENV === "dev"
     ? process.env.dev_OAuthRedirectUri
+    : process.env.ENV === "staging"
+    ? process.env.staging_OAuthRedirectUri
     : process.env.OAuthRedirectUri;
 
 const DB_NAME =
