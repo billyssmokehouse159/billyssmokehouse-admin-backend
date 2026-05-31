@@ -19,7 +19,11 @@ const OAUTH_REDIRECT_URL =
     : process.env.OAuthRedirectUri;
 
 const DB_NAME =
-  process.env.ENV === "dev" ? process.env.dev_db_name : process.env.db_name;
+  process.env.ENV === "dev"
+    ? process.env.dev_db_name
+    : process.env.ENV === "staging"
+    ? process.env.dev_db_name
+    : process.env.db_name;
 const USER_COLLECTION = process.env.db_user_collection || ""
 
 const authRouter = express.Router();
